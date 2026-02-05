@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Events - Friends School Kamusinga</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 22H22L12 2ZM12 6L19 20H5L12 6Z"/>
+                </svg>
+                FSK Events
+            </a>
+            <div class="hamburger" id="hamburger">
+                <span>&#9776;</span>
+            </div>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="events.html" class="active">Upcoming Events</a>
+                <a href="index.html#reviews">Reviews</a>
+                <a href="admin.html">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container" style="padding: 40px 0;">
+        <h1 class="text-center">Upcoming Tournaments & Events</h1>
+
+        <!-- Filters -->
+        <div class="filters text-center mt-2" style="margin-bottom: 40px;">
+            <button class="filter-btn btn active" data-filter="all" style="margin: 5px; border: 1px solid var(--primary-color);">All</button>
+            <button class="filter-btn btn" data-filter="Sports" style="margin: 5px; border: 1px solid var(--primary-color);">Sports</button>
+            <button class="filter-btn btn" data-filter="Academics" style="margin: 5px; border: 1px solid var(--primary-color);">Academics</button>
+            <button class="filter-btn btn" data-filter="Cultural" style="margin: 5px; border: 1px solid var(--primary-color);">Cultural</button>
+        </div>
+
+        <!-- Events Grid -->
+        <div class="events-grid" id="all-events-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; min-height: 300px;">
+            <!-- Events injected here -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>FSK Events</h3>
+                <p>Empowering the next generation through sports, academics, and culture.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@fsk.ac.ke</p>
+                <p>Phone: +254 700 000 000</p>
+                <p>Kimilili, Kenya</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul style="color: rgba(255,255,255,0.7);">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="admin.html">Admin Portal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Friends School Kamusinga. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/events.js"></script>
+</body>
+</html>
