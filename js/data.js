@@ -37,6 +37,15 @@ const initialEvents = [
         description: 'A celebration of music, dance, and poetry from different cultures.',
         imageUrl: 'https://images.unsplash.com/photo-1514525253440-b393452e8d26?auto=format&fit=crop&q=80',
         status: 'published'
+    },
+    {
+        id: '4',
+        title: 'The Annual Allan Bradley Tournament',
+        date: '2026-02-07',
+        categoryId: 'Sports',
+        description: 'Friends School Kamusinga Presents The Annual Allan Bradley Tournament. Games Featured: Basketball, Hockey, Soccer, Rugby, Lawn Tennis, Swimming, Volleyball, Badminton, Chess, Table Tennis. Entry Fee: 2,500 per team. Contact GM: Mr. Kasembeli (0711 357 698) - Use Common Sense.',
+        imageUrl: 'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80',
+        status: 'published'
     }
 ];
 
@@ -60,9 +69,24 @@ const initialReviews = [
 const DataService = {
     // Initialization
     init() {
-        if (!localStorage.getItem(DB_KEYS.EVENTS)) {
+        let events = JSON.parse(localStorage.getItem(DB_KEYS.EVENTS) || 'null');
+
+        if (!events) {
             localStorage.setItem(DB_KEYS.EVENTS, JSON.stringify(initialEvents));
+        } else {
+            // Check for new seed data and append if missing (Migration strategy)
+            let changed = false;
+            initialEvents.forEach(seedEvent => {
+                if (!events.find(e => e.id === seedEvent.id)) {
+                    events.push(seedEvent);
+                    changed = true;
+                }
+            });
+            if (changed) {
+                localStorage.setItem(DB_KEYS.EVENTS, JSON.stringify(events));
+            }
         }
+
         if (!localStorage.getItem(DB_KEYS.REVIEWS)) {
             localStorage.setItem(DB_KEYS.REVIEWS, JSON.stringify(initialReviews));
         }
