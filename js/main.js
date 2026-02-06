@@ -24,16 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function loadFeaturedEvents() {
-    const events = DataService.getEvents();
+    const events = DataService.getUpcomingEvents();
     const container = document.getElementById('featured-events');
 
-    // Filter published events and take top 3
-    const publishedEvents = events
-        .filter(e => e.status === 'published')
-        .slice(0, 3);
+    // Take top 3 upcoming events
+    const publishedEvents = events.slice(0, 3);
 
     if (publishedEvents.length === 0) {
-        container.innerHTML = '<p>No upcoming events at the moment.</p>';
+        container.innerHTML = '<p class="text-center" style="grid-column: 1/-1;">No upcoming events at the moment. Check back soon!</p>';
         return;
     }
 

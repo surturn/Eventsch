@@ -25,7 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
 // Events Listing Page
 // ------------------------------------------
 function initEventsPage() {
-    const events = DataService.getEvents().filter(e => e.status === 'published');
+    // Combine upcoming and past events for the 'all' view
+    // Upcoming: Nearest first
+    // Past: Most recent first
+    const upcoming = DataService.getUpcomingEvents();
+    const past = DataService.getPastEvents();
+    const events = [...upcoming, ...past];
     let currentFilter = 'all';
 
     const container = document.getElementById('all-events-container');
@@ -122,13 +127,13 @@ function setupRegistrationModal(event) {
     document.getElementById('reg-event-id').value = event.id;
     document.getElementById('reg-event-name').value = event.title;
 
-    if(openBtn) {
+    if (openBtn) {
         openBtn.addEventListener('click', () => {
             modal.style.display = 'flex';
         });
     }
 
-    if(closeBtn) {
+    if (closeBtn) {
         closeBtn.addEventListener('click', () => {
             modal.style.display = 'none';
         });

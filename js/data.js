@@ -100,6 +100,32 @@ const DataService = {
         return JSON.parse(localStorage.getItem(DB_KEYS.EVENTS) || '[]');
     },
 
+    getUpcomingEvents() {
+        const events = this.getEvents();
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); // Normalize to start of day
+
+        return events
+            .filter(e => {
+                const eventDate = new Date(e.date);
+                return eventDate >= today && e.status === 'published';
+            })
+            .sort((a, b) => new Date(a.date) - new Date(b.date)); // Ascending (nearest first)
+    },
+
+    getPastEvents() {
+        const events = this.getEvents();
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        return events
+            .filter(e => {
+                const eventDate = new Date(e.date);
+                return eventDate < today && e.status === 'published';
+            })
+            .sort((a, b) => new Date(b.date) - new Date(a.date)); // Descending (most recent past first)
+    },
+
     getEventById(id) {
         const events = this.getEvents();
         return events.find(e => e.id === id);
