@@ -43,7 +43,7 @@ function initEventsPage() {
 
         container.innerHTML = filtered.map(event => `
             <div class="event-card" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                <div style="height: 200px; background-image: url('${event.imageUrl}'); background-size: cover; background-position: center;"></div>
+                <div style="height: 200px; background-image: url('${DataService.escapeHtml(event.imageUrl)}'); background-size: cover; background-position: center;"></div>
                 <div style="padding: 20px;">
                     <span style="background: var(--background-light); padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; color: var(--primary-color); font-weight: bold; text-transform: uppercase;">${DataService.escapeHtml(event.category)}</span>
                     <h3 style="margin-top: 10px; font-size: 1.25rem;">${DataService.escapeHtml(event.title)}</h3>
@@ -83,7 +83,7 @@ function initEventDetailsPage() {
 
     // Render Event Details
     container.innerHTML = `
-        <div style="height: 400px; background-image: url('${event.imageUrl}'); background-size: cover; background-position: center;"></div>
+        <div style="height: 400px; background-image: url('${DataService.escapeHtml(event.imageUrl)}'); background-size: cover; background-position: center;"></div>
         <div style="padding: 40px;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
                 <div>
