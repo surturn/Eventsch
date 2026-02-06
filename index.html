@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends School Kamusinga - Events</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="container navbar">
+            <a href="index.html" class="logo">
+                <!-- Simple SVG Icon for Logo Placeholder -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 22H22L12 2ZM12 6L19 20H5L12 6Z"/>
+                </svg>
+                FSK Events
+            </a>
+            <div class="hamburger" id="hamburger">
+                <span>&#9776;</span>
+            </div>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="events.html">Upcoming Events</a>
+                <a href="#reviews">Reviews</a>
+                <a href="admin.html">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" style="background: linear-gradient(rgba(0, 46, 109, 0.9), rgba(0, 46, 109, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80') center/cover no-repeat; color: white; padding: 100px 0;">
+        <div class="container hero-content">
+            <h1>Welcome to Friends School Kamusinga</h1>
+            <p style="font-size: 1.2rem; margin-bottom: 24px;">Excellence in Academics and Co-curricular Activities. Join our upcoming tournaments and events.</p>
+            <a href="events.html" class="btn btn-primary" style="background-color: var(--accent-color); color: var(--text-color);">Explore Events</a>
+            <a href="#about" class="btn btn-secondary" style="border-color: white; color: white; margin-left: 10px;">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Upcoming Events Preview -->
+    <section class="section" style="padding: 60px 0;">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                <h2>Upcoming Events</h2>
+                <a href="events.html" style="color: var(--primary-color); font-weight: 600;">View All &rarr;</a>
+            </div>
+            <div class="events-grid" id="featured-events" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                <!-- Event cards will be injected here by JS -->
+                <p>Loading events...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Stats Section -->
+    <section id="about" style="background-color: var(--primary-color); color: white; padding: 60px 0;">
+        <div class="container text-center">
+            <h2>Why Participate?</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 40px;">
+                <div>
+                    <h3 style="color: var(--accent-color); font-size: 2.5rem;">50+</h3>
+                    <p>Schools Participating</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--accent-color); font-size: 2.5rem;">1000+</h3>
+                    <p>Student Athletes</p>
+                </div>
+                <div>
+                    <h3 style="color: var(--accent-color); font-size: 2.5rem;">20+</h3>
+                    <p>Events Annually</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section" style="padding: 60px 0; background-color: var(--background-light);">
+        <div class="container">
+            <h2 class="text-center">Gallery & Past Highlights</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 30px;">
+                <img src="https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80" alt="Rugby Team" style="border-radius: 8px; width: 100%; height: 200px; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&q=80" alt="Trophy Presentation" style="border-radius: 8px; width: 100%; height: 200px; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80" alt="Science Congress" style="border-radius: 8px; width: 100%; height: 200px; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80" alt="Cultural Dance" style="border-radius: 8px; width: 100%; height: 200px; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            </div>
+            <div class="text-center mt-2">
+                <p>Check out more moments on our <a href="#" style="color: var(--primary-color); font-weight: bold;">Instagram page</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="reviews" class="section" style="padding: 60px 0; background-color: white;">
+        <div class="container">
+            <h2 class="text-center">What People Say</h2>
+            <div class="reviews-grid" id="reviews-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 30px;">
+                <!-- Reviews injected here -->
+            </div>
+            <div class="text-center mt-3">
+                <button id="open-review-modal" class="btn btn-secondary">Submit a Review</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review Modal -->
+    <div id="review-modal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; align-items: center; justify-content: center;">
+        <div style="background: white; padding: 30px; border-radius: 8px; width: 90%; max-width: 500px; position: relative;">
+            <span id="close-review-modal" style="position: absolute; top: 10px; right: 15px; font-size: 1.5rem; cursor: pointer;">&times;</span>
+            <h3>Submit Your Review</h3>
+            <form id="review-form">
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px;">Name</label>
+                    <input type="text" id="review-name" required style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px;">Rating (1-5)</label>
+                    <select id="review-rating" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;">
+                        <option value="5">5 - Excellent</option>
+                        <option value="4">4 - Very Good</option>
+                        <option value="3">3 - Good</option>
+                        <option value="2">2 - Fair</option>
+                        <option value="1">1 - Poor</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label style="display: block; margin-bottom: 5px;">Comment</label>
+                    <textarea id="review-comment" required rows="4" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>FSK Events</h3>
+                <p>Empowering the next generation through sports, academics, and culture.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@fsk.ac.ke</p>
+                <p>Phone: +254 700 000 000</p>
+                <p>Kimilili, Kenya</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul style="color: rgba(255,255,255,0.7);">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="admin.html">Admin Portal</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Friends School Kamusinga. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
